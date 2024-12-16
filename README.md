@@ -2,7 +2,7 @@
 
 This is a simple iOS app built with Xcode that helps users help to capture memories of the people you meet. Store details and voice notes for unforgettable connections.
 
-![App Screenshot](IMG_1538.PNG)
+![App Screenshot](Vizvoz.png)
 
 
 
