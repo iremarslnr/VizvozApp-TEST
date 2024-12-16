@@ -16,7 +16,7 @@ This is a simple iOS app built with Xcode that helps users help to capture memor
   
 
 ## Installation
-1. Clone this repository: `git clone <https://github.com/iremarslnr/VizvozApp-TEST.git>
+1. Clone this repository:  <https://github.com/iremarslnr/VizvozApp-TEST.git>
 2. Open the project in Xcode.
 3. Run the app on a simulator or connected device.
 
