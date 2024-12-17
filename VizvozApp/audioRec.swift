@@ -22,6 +22,8 @@ struct VoiceRecorderApp: View {
                             .background(Color.red)
                             .foregroundColor(.white)
                             .cornerRadius(10)
+                            .accessibilityLabel("Stop Recording, button")
+                            .accessibilityHint("Tap to   stop recording")
                     }
                 } else {
                     Button(action: audioRecorder.startRecording) {
@@ -31,6 +33,8 @@ struct VoiceRecorderApp: View {
                             .background(Color.green)
                             .foregroundColor(.white)
                             .cornerRadius(10)
+                            .accessibilityLabel("Start Recording, button")
+                            .accessibilityHint("Tap to   start recording")
                     }
                 }
                 
@@ -120,6 +124,7 @@ class AudioRecorder: ObservableObject {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: recording.fileURL)
             audioPlayer?.play()
+            UIAccessibility.post(notification: .announcement, argument: "Play the recording.")
         } catch {
             print("Failed to play recording: \(error.localizedDescription)")
         }

@@ -57,6 +57,10 @@ struct OnboardingView: View {
                         .padding(.trailing,50)
                         .padding(.top,498)
                 }
+                .accessibilityLabel("Next")
+                .accessibilityHint("Tap to go next page")
+                
+                
             }
         }
     }

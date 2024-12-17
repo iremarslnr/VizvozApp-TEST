@@ -45,15 +45,19 @@ struct AddNewContact: View {
                 }
                 Section("How you met") {
                     TextField("", text: $howYouMet)
+                        .accessibilityHint("Describe how you met this person")
                 }
                 Section("Relationship") {
                     TextField("", text: $relationship)
+                        .accessibilityHint("Describe your relationship type with this person")
                 }
                 Section("Info") {
                     TextField("", text: $info)
+                        .accessibilityHint("Provide neccessary information about this person")
                 }
                 Section("Help to remember") {
                     TextField("", text: $helptoremember)
+                        .accessibilityHint("Describe some hints for you to remember this person")
                 }
 
                
@@ -62,14 +66,20 @@ struct AddNewContact: View {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
                         showModal.toggle()
+                        
                     }
+                    .accessibilityLabel("Cancel, button")
+                    .accessibilityHint("Tap to  cancel.")
                 }
+                
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Add") {
                         let newContact = Contact(name: name, surname: surname, howYouMet: howYouMet, relationship: relationship, info: info, helpToRemember: helptoremember)
                         add(newContact)
                         showModal.toggle()
                     }
+                    .accessibilityLabel("Add, button")
+                    .accessibilityHint("Tap to  add the contact.")
                 }
             }
             .navigationTitle("New Contact")

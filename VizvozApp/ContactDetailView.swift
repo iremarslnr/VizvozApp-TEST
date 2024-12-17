@@ -56,6 +56,8 @@ struct ContactDetailView: View {
                             Button("Modify") {
                                 modify.toggle()
                             }
+                            .accessibilityLabel("Modify, button")
+                            .accessibilityHint("Tap to  modify the  contact")
                         }
                     }
                     .sheet(isPresented: $modify) {
@@ -100,6 +102,8 @@ struct ContactDetailView: View {
                             Button("Save") {
                                 dismiss()
                             }
+                            .accessibilityLabel("Save, button")
+                            .accessibilityHint("Tap to  save the  contact")
                         }
                     }
                     .navigationTitle("Modify Contact")

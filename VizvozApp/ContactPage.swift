@@ -18,15 +18,22 @@ struct ContactPage: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 100)
+                        .accessibilityHidden(true)
                     
                     Spacer()
                     
                     TextField("Search", text: $searchText)
-                                        .padding(10)
-                                        .background(Color.white.opacity(0.2))
-                                        .cornerRadius(10)
-                                        .foregroundColor(.white)
-                                        .padding(.horizontal)
+                    
+                    .padding(10)
+                    .background(Color.white.opacity(0.2))
+                    .cornerRadius(10)
+                    .foregroundColor(.white)
+                    .padding(.horizontal)
+                    
+                    .accessibilityLabel("Search for contacts")
+                .accessibilityHint("Enter text to search for contacts")
+                .accessibilityValue(searchText.isEmpty ? "No search text entered" : "Search query: \(searchText)")
+
                     Spacer()
                     
                     
@@ -37,6 +44,8 @@ struct ContactPage: View {
                             .foregroundStyle(Color.white)
                             .fixedSize()
                     }
+                    .accessibilityLabel("Add contact, button")
+                    .accessibilityHint("Tap to  add new contact")
                 }
                 .padding(.horizontal)
                 
@@ -73,6 +82,8 @@ struct ContactPage: View {
                             } label: {
                                 Text("Add your first contact")
                             }
+                            .accessibilityLabel("Add contact, button")
+                            .accessibilityHint("Tap to add your first contact")
                         }
                                 .preferredColorScheme(.dark)
                             
