@@ -44,7 +44,7 @@ struct ContactPage: View {
                             .foregroundStyle(Color.white)
                             .fixedSize()
                     }
-                    .accessibilityLabel("Add contact, button")
+                    .accessibilityLabel("Add contact")
                     .accessibilityHint("Tap to  add new contact")
                 }
                 .padding(.horizontal)
@@ -82,7 +82,7 @@ struct ContactPage: View {
                             } label: {
                                 Text("Add your first contact")
                             }
-                            .accessibilityLabel("Add contact, button")
+                            .accessibilityLabel("Add contact")
                             .accessibilityHint("Tap to add your first contact")
                         }
                                 .preferredColorScheme(.dark)
