@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
-struct VizvozAppApp: App {
-    @State var isPresented = false
+struct VizvozApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .modelContainer(for: Contact.self)
         }
     }
 }

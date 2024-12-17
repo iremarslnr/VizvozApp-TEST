@@ -61,6 +61,7 @@ struct VoiceRecorderApp: View {
         }
         .preferredColorScheme(.dark)
         .onAppear {
+            audioRecorder.requestMicrophonePermission()
             audioRecorder.loadRecordings()
         }
     }
@@ -106,6 +107,19 @@ class AudioRecorder: ObservableObject {
         isRecording = false
         
         loadRecordings()
+    }
+    
+    func requestMicrophonePermission() {
+        AVCaptureDevice.requestAccess(for: .audio) { response in
+            if response {
+              
+                print("Permission granted")
+            } else {
+               
+                    print("Microphone access denied.")
+               
+            }
+        }
     }
     
     func loadRecordings() {
